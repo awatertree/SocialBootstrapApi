@@ -1,0 +1,61 @@
+require "json"
+require "rake-pipeline"
+require "rake-pipeline-web-filters"
+require "rake-pipeline-web-filters/helpers"
+
+# processed files should be outputted to public
+output "."
+
+input "less" do
+  match "bootstrap.less" do
+    less :paths => ['less'], :filename => 'bootstrap.less'
+    concat "auth.css"
+  end
+
+  match "**/*.css" do
+    yui_css 
+  end
+end
+
+#input "vendor" do
+#  match "*.js" do
+#    concat "js/vendor-plugins.js"
+#  end
+
+#  match "**/*.js" do
+#    uglify
+#  end
+#end
+
+input "web-packages" do
+  # process all coffee files
+  match "**/*.coffee" do
+    coffee_script
+  end 
+
+  # process handlebars files
+  match "*/templates/*.handlebars" do
+    handlebars
+  end
+
+  match "*/{lib,templates}/**/*.js" do
+    minispade :rewrite_requires => true, :string => true, :module_id_generator => proc { |input|
+      id = input.path.dup
+      id.sub!('/lib/', '/')
+      id.sub!(/\.js$/, '')
+      id.sub!(/\/main$/, '')
+      id
+    }
+
+    concat "js/2.js"
+  end
+
+  match "minispade.js" do
+    concat "js/1.js"
+  end
+
+  match "js/*.js" do
+    concat "auth.js"
+  end
+end
+# vim: filetype=ruby

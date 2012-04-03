@@ -135,6 +135,13 @@
     <Compile Include="Support\HtmlHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="_bin_deployableAssemblies\Microsoft.Web.Infrastructure.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Razor.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Deployment.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Razor.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Helpers.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Mvc.dll" />
     <None Include="Content\app.css.bundle" />
     <None Include="Content\default.less">
       <LastGenOutput>default.css</LastGenOutput>

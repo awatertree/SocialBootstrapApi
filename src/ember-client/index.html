@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Auth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/auth.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png">
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+    <div id="bclegal-app"></div>
+
+    <script>
+      // Load custom version of jQuery if possible
+      var jQueryMatch = location.search.match(/jquery=([^&]+)/),
+          jQueryVersion = jQueryMatch ? jQueryMatch[1] : "1.7.1";
+      if (jQueryVersion !== 'none') {
+        document.write(unescape('%3Cscript src="//ajax.googleapis.com/ajax/libs/jquery/'+jQueryVersion+'/jquery.js"%3E%3C/script%3E'));
+      }
+      // Close the script tag to make sure document.write happens
+    </script>
+
+    <script>
+      // Fallback to default jQuery
+      if (jQueryVersion !== 'none' && !window.jQuery) {
+        if (console && console.warn) { console.warn("Unable to load jQuery "+jQueryVersion+". Using default."); }
+        document.write(unescape('%3Cscript src="jquery-1.7.1.js"%3E%3C/script%3E'));
+      }
+    </script>
+    <script type="text/javascript" src="auth.js"></script>
+    <script type="text/javascript">
+		minispade.require('auth');
+    </script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="vendor/bootstrap-transition.js"></script>
+    <script src="vendor/bootstrap-alert.js"></script>
+    <script src="vendor/bootstrap-modal.js"></script>
+    <script src="vendor/bootstrap-dropdown.js"></script>
+    <script src="vendor/bootstrap-scrollspy.js"></script>
+    <script src="vendor/bootstrap-tab.js"></script>
+    <script src="vendor/bootstrap-tooltip.js"></script>
+    <script src="vendor/bootstrap-popover.js"></script>
+    <script src="vendor/bootstrap-button.js"></script>
+    <script src="vendor/bootstrap-collapse.js"></script>
+    <script src="vendor/bootstrap-carousel.js"></script>
+    <script src="vendor/bootstrap-typeahead.js"></script>
+   
+  </body>
+</html>

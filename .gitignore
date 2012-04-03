@@ -40,4 +40,5 @@ release/latest/
 release/*
 *.min.js
 *.min.css
-
+*.pidb
+*.userprefs

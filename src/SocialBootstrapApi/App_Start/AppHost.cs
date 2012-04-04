@@ -10,7 +10,7 @@ using ServiceStack.MiniProfiler;
 using ServiceStack.MiniProfiler.Data;
 using ServiceStack.Mvc;
 using ServiceStack.OrmLite;
-using ServiceStack.OrmLite.SqlServer;
+using ServiceStack.OrmLite.PostgreSQL;
 using ServiceStack.ServiceInterface;
 using ServiceStack.ServiceInterface.Admin;
 using ServiceStack.ServiceInterface.Auth;
@@ -187,7 +187,7 @@ namespace SocialBootstrapApi
 				ConfigUtils.GetConnectionString("UserAuth"));
 			container.Register<IDbConnectionFactory>(
 				new OrmLiteConnectionFactory(connStr, //ConnectionString in Web.Config
-					SqlServerOrmLiteDialectProvider.Instance) {
+					PostgreSQLDialectProvider.Instance) {
 						ConnectionFilter = x => new ProfiledDbConnection(x, Profiler.Current)
 					});
 

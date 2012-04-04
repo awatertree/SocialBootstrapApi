@@ -70,9 +70,6 @@
     <Reference Include="ServiceStack.OrmLite">
       <HintPath>..\..\lib\ServiceStack.OrmLite.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.OrmLite.SqlServer">
-      <HintPath>..\..\lib\ServiceStack.OrmLite.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack.Redis">
       <HintPath>..\..\lib\ServiceStack.Redis.dll</HintPath>
     </Reference>
@@ -93,6 +90,12 @@
     </Reference>
     <Reference Include="System.Web.Mvc">
       <HintPath>_bin_deployableAssemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.PostgreSQL">
+      <HintPath>..\..\lib\ServiceStack.OrmLite.PostgreSQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\lib\Npgsql.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
